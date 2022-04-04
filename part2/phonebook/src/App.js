@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import personService from './services/persons'
-import { Persons, Filter, PersonForm, Notification } from './components/Person'
+import Persons from './components/Person'
+import PersonForm from './components/PersonForm'
+import Filter from './components/Filter'
+import Notification from '.components/Notification'
 
 
 
@@ -78,7 +81,6 @@ const App = () => {
   
   // Delete name from phonebook
   const handleDeleteRequest = (event) => {
-    event.preventDefault()
     const id = event.target.id
     const name = persons.find(person => person.id == id).name
     if (window.confirm(`Do you really want to delete ${name}?`)) {
